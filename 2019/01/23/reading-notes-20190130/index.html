@@ -96,24 +96,24 @@
 
 
 
-  <meta name="description" content="From Here Pick up Unreal Engine 4. Keep up learning.">
+  <meta name="description" content="Getting readyOur first step is to remember the execution order of event functions, but nowwe also consider FixedUpdate, because we’re handling behaviors on top of thephysics engine:  FixedUpdate Updat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Goal of this year">
-<meta property="og:url" content="https://www.kkmaple.com/2019/01/08/Goal/index.html">
+<meta property="og:title" content="Adjusting the agent for physics">
+<meta property="og:url" content="https://www.kkmaple.com/2019/01/23/reading-notes-20190130/index.html">
 <meta property="og:site_name" content="kkmaple">
-<meta property="og:description" content="From Here Pick up Unreal Engine 4. Keep up learning.">
+<meta property="og:description" content="Getting readyOur first step is to remember the execution order of event functions, but nowwe also consider FixedUpdate, because we’re handling behaviors on top of thephysics engine:  FixedUpdate Updat">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-08T02:06:59.782Z">
+<meta property="og:updated_time" content="2019-03-03T06:21:27.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Goal of this year">
-<meta name="twitter:description" content="From Here Pick up Unreal Engine 4. Keep up learning.">
+<meta name="twitter:title" content="Adjusting the agent for physics">
+<meta name="twitter:description" content="Getting readyOur first step is to remember the execution order of event functions, but nowwe also consider FixedUpdate, because we’re handling behaviors on top of thephysics engine:  FixedUpdate Updat">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.kkmaple.com/2019/01/08/Goal/">
+  <link rel="canonical" href="https://www.kkmaple.com/2019/01/23/reading-notes-20190130/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>Goal of this year | kkmaple</title>
+  <title>Adjusting the agent for physics | kkmaple</title>
   
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2019/01/08/Goal/">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2019/01/23/reading-notes-20190130/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kkmaple">
@@ -305,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Goal of this year
+          <h1 class="post-title" itemprop="name headline">Adjusting the agent for physics
 
               
             
@@ -331,12 +331,24 @@
                 
               
 
-              <time title="Post created: 2019-01-08 09:44:04 / Updated at: 10:06:59" itemprop="dateCreated datePublished" datetime="2019-01-08T09:44:04+08:00">2019-01-08</time>
+              <time title="Post created: 2019-01-23 22:02:12" itemprop="dateCreated datePublished" datetime="2019-01-23T22:02:12+08:00">2019-01-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-03-03 14:21:27" itemprop="dateModified" datetime="2019-03-03T14:21:27+08:00">2019-03-03</time>
               
             
           </span>
@@ -369,9 +381,38 @@
       
 
       
-        <h1 id="From-Here"><a href="#From-Here" class="headerlink" title="From Here"></a>From Here</h1><ul>
-<li>Pick up Unreal Engine 4.</li>
-<li>Keep up learning.</li>
+        <h1 id="Getting-ready"><a href="#Getting-ready" class="headerlink" title="Getting ready"></a>Getting ready</h1><p>Our first step is to remember the execution order of event functions, but now<br>we also consider <em>FixedUpdate</em>, because we’re handling behaviors on top of the<br>physics engine:</p>
+<ul>
+<li>FixedUpdate</li>
+<li>Update</li>
+<li>LateUpdate</li>
+</ul>
+<h1 id="How-to-do-it…"><a href="#How-to-do-it…" class="headerlink" title="How to do it…"></a>How to do it…</h1><p>This recipe entails adding changes to our <em>Agent</em> class.</p>
+<ol>
+<li>Go to the <em>Agent</em> class.</li>
+<li><p>Add a member variable for storing the rigid body component’s reference:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private Rigidbody aRigidBody;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Get the reference to the rigid body component in the <em>Start</em> function:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aRigidBody = GetComponent&lt;Rigidbody&gt;();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Implement a function for transforming an orientation value to a vector:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// Calculates the Vector3 given orientation value</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;orientation&quot;&gt;&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">public Vector3 OriToVec(float orientation)</span><br><span class="line">&#123;</span><br><span class="line">    Vector3 vector = Vector3.zero;</span><br><span class="line">    vector.x = Mathf.Sin(orientation * Mathf.Deg2Rad) * 1.0f;</span><br><span class="line">    vector.z = Mathf.Cos(orientation * Mathf.Deg2Rad) * 1.0f;</span><br><span class="line">    return vector.normalized;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add the following two lines at the beginning of the <em>Update</em> function:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public virtual void Update ()</span><br><span class="line">&#123;</span><br><span class="line">    if (aRigidBody == null)</span><br><span class="line">    return;</span><br><span class="line">    // ... previous code</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Define the <em>FixedUpdate</em> function:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public virtual void FixedUpdate()</span><br><span class="line">&#123;</span><br><span class="line">    if (aRigidBody == null)</span><br><span class="line">        return;</span><br><span class="line">    // next step</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Continue implementing the <em>FixedUpdate</em> function:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Vector3 displacement = velocity * Time.deltaTime;</span><br><span class="line">orientation += rotation * Time.deltaTime;</span><br><span class="line">if (orientation &lt; 0.0f)</span><br><span class="line">orientation += 360.0f;</span><br><span class="line">else if (orientation &gt; 360.0f)</span><br><span class="line">orientation -= 360.0f;</span><br><span class="line">// The ForceMode will depend on what you want to achieve</span><br><span class="line">// We are using VelocityChange for illustration purposes</span><br><span class="line">aRigidBody.AddForce(displacement, ForceMode.VelocityChange);</span><br><span class="line">Vector3 orientationVector = OriToVec(orientation);</span><br><span class="line">aRigidBody.rotation = Quaternion.LookRotation(orientationVector, Vector3.up);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="How-it-works…"><a href="#How-it-works…" class="headerlink" title="How it works…"></a>How it works…</h1><p>We added a member variable for storing the reference to a possible rigid body<br>component, and also implemented <em>FixedUpdate</em>, similar to <em>Update</em>, but taking into<br>consideration that we need to apply force to the rigid body instead of<br>translating the object ourselves, because we’re working on top of Unity’s<br>physics engine.<br>Finally, we created a simple validation at the beginning of each function so<br>they’re called only when it applies.</p>
+<h1 id="See-also"><a href="#See-also" class="headerlink" title="See also"></a>See also</h1><p>See also<br>For further information on the execution order of event functions, please refer<br>to official Unity documentation:</p>
+<ul>
+<li><a href="https://docs.unity3d.com/Manual/ExecutionOrder.html" target="_blank" rel="noopener">https://docs.unity3d.com/Manual/ExecutionOrder.html</a></li>
 </ul>
 
       
@@ -403,14 +444,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/16/reading-notes-20190116/" rel="next" title="Creating the behaviors template">
+                <i class="fa fa-chevron-left"></i> Creating the behaviors template
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/16/reading-notes-20190116/" rel="prev" title="Creating the behaviors template">
-                Creating the behaviors template <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/23/reading-notes-20190123/" rel="prev" title="Pursuing and evading">
+                Pursuing and evading <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -481,7 +526,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
@@ -547,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#From-Here"><span class="nav-number">1.</span> <span class="nav-text">From Here</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Getting-ready"><span class="nav-number">1.</span> <span class="nav-text">Getting ready</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-do-it…"><span class="nav-number">2.</span> <span class="nav-text">How to do it…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-it-works…"><span class="nav-number">3.</span> <span class="nav-text">How it works…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#See-also"><span class="nav-number">4.</span> <span class="nav-text">See also</span></a></li></ol></div>
             
 
           </div>
