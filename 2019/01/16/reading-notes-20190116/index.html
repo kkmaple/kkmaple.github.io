@@ -96,20 +96,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="kkmaple">
-<meta property="og:url" content="https://www.kkmaple.com/index.html">
+  <meta name="description" content="创建3个类 Steering, AgentBehaviour 和 Agent Getting readyOur first step is to remember the update functions’ order of execution:  Update LateUpdate  How to do itWe need to create three classes, Steering, A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Creating the behaviors template">
+<meta property="og:url" content="https://www.kkmaple.com/2019/01/16/reading-notes-20190116/index.html">
 <meta property="og:site_name" content="kkmaple">
+<meta property="og:description" content="创建3个类 Steering, AgentBehaviour 和 Agent Getting readyOur first step is to remember the update functions’ order of execution:  Update LateUpdate  How to do itWe need to create three classes, Steering, A">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-16T15:20:56.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kkmaple">
+<meta name="twitter:title" content="Creating the behaviors template">
+<meta name="twitter:description" content="创建3个类 Steering, AgentBehaviour 和 Agent Getting readyOur first step is to remember the update functions’ order of execution:  Update LateUpdate  How to do itWe need to create three classes, Steering, A">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.kkmaple.com/">
+  <link rel="canonical" href="https://www.kkmaple.com/2019/01/16/reading-notes-20190116/">
 
 
 
@@ -119,7 +123,7 @@
   };
 </script>
 
-  <title>kkmaple</title>
+  <title>Creating the behaviors template | kkmaple</title>
   
 
 
@@ -167,8 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -206,7 +209,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -268,9 +271,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -285,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2018/01/16/reading-notes-20180116/">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2019/01/16/reading-notes-20190116/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kkmaple">
@@ -302,10 +305,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/01/16/reading-notes-20180116/" class="post-title-link" itemprop="url">Creating the behaviors template</a>
+          <h1 class="post-title" itemprop="name headline">Creating the behaviors template
+
               
             
           </h1>
@@ -330,24 +331,12 @@
                 
               
 
-              <time title="Post created: 2018-01-16 22:18:28" itemprop="dateCreated datePublished" datetime="2018-01-16T22:18:28+08:00">2018-01-16</time>
+              <time title="Post created: 2019-01-16 22:18:28 / Updated at: 23:20:56" itemprop="dateCreated datePublished" datetime="2019-01-16T22:18:28+08:00">2019-01-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2019-03-03 11:05:58" itemprop="dateModified" datetime="2019-03-03T11:05:58+08:00">2019-03-03</time>
               
             
           </span>
@@ -380,9 +369,7 @@
       
 
       
-        
-          
-            <p>创建3个类 <em>Steering</em>, <em>AgentBehaviour</em> 和 <em>Agent</em></p>
+        <p>创建3个类 <em>Steering</em>, <em>AgentBehaviour</em> 和 <em>Agent</em></p>
 <h1 id="Getting-ready"><a href="#Getting-ready" class="headerlink" title="Getting ready"></a>Getting ready</h1><p>Our first step is to remember the update functions’ order of execution:</p>
 <ul>
 <li>Update</li>
@@ -414,8 +401,6 @@
 <li><a href="https://docs.unity3d.com/Manual/class-MonoManager.html" target="_blank" rel="noopener">https://docs.unity3d.com/Manual/class-MonoManager.html</a></li>
 </ul>
 
-          
-        
       
     </div>
 
@@ -438,12 +423,28 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/08/Goal/" rel="next" title="Goal of this year">
+                <i class="fa fa-chevron-left"></i> Goal of this year
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -453,14 +454,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -481,8 +483,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -497,7 +508,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
@@ -552,6 +563,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Getting-ready"><span class="nav-number">1.</span> <span class="nav-text">Getting ready</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-do-it"><span class="nav-number">2.</span> <span class="nav-text">How to do it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-it-works…"><span class="nav-number">3.</span> <span class="nav-text">How it works…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#There’s-more…"><span class="nav-number">4.</span> <span class="nav-text">There’s more…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#See-also"><span class="nav-number">5.</span> <span class="nav-text">See also</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -682,6 +710,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -691,6 +723,8 @@
 
 
   
+  
+
 
 
 
