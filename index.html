@@ -285,6 +285,199 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2019/03/08/reading-notes-20190308/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kkmaple">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkmaple">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/08/reading-notes-20190308/" class="post-title-link" itemprop="url">Following a path</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-03-08 21:10:38 / Updated at: 22:11:37" itemprop="dateCreated datePublished" datetime="2019-03-08T21:10:38+08:00">2019-03-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Getting-ready"><a href="#Getting-ready" class="headerlink" title="Getting ready"></a>Getting ready</h1><p>We need to define a custom data type called <em>PathSegment</em>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">public class PathSegment</span><br><span class="line">&#123;</span><br><span class="line">    public Vector3 a;</span><br><span class="line">    public Vector3 b;</span><br><span class="line">    public PathSegment () : this (Vector3.zero, Vector3.zero)&#123;&#125;</span><br><span class="line">    public PathSegment (Vector3 a, Vector3 b)</span><br><span class="line">    &#123;</span><br><span class="line">        this.a = a;</span><br><span class="line">        this.b = b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="How-to-do-it…"><a href="#How-to-do-it…" class="headerlink" title="How to do it…"></a>How to do it…</h1><p>This is a long recipe that could be regarded as a big two-step process. First,<br>we build the <em>Path</em> class, which abstracts points in the path from their specific<br>spatial representations, and then we build the <em>PathFollower</em> behavior that makes<br>use of that abstraction in order to get actual spatial points to follow:</p>
+<ol>
+<li><p>Create the Path class, which consists of nodes and segments; only the<br>nodes are public and are assigned manually:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">public class Path : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public List&lt;GameObject&gt; nodes;</span><br><span class="line">    List&lt;PathSegment&gt; segments;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Define the <em>Start</em> function to set the segments when the scene starts:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void Start()</span><br><span class="line">&#123;</span><br><span class="line">    segments = GetSegments();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Define the <em>GetSegments</em> function to build the segments from the nodes:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;PathSegment&gt; GetSegments ()</span><br><span class="line">&#123;</span><br><span class="line">    List&lt;PathSegment&gt; segments = new List&lt;PathSegment&gt;();</span><br><span class="line">    int i;</span><br><span class="line">    for (i = 0; i &lt; nodes.Count - 1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 src = nodes[i].transform.position;</span><br><span class="line">        Vector3 dst = nodes[i+1].transform.position;</span><br><span class="line">        PathSegment segment = new PathSegment(src, dst);</span><br><span class="line">        segments.Add(segment);</span><br><span class="line">    &#125;</span><br><span class="line">    return segments;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Define the first function for abstraction, which is called <em>GetParam</em>:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public float GetParam(Vector3 position, float lastParam)</span><br><span class="line">&#123;</span><br><span class="line">    // body</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>We need to find out the segment the agent is closest to:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">float param = 0f;</span><br><span class="line">PathSegment currentSegment = null;</span><br><span class="line">float tempParam = 0f;</span><br><span class="line">foreach (PathSegment ps in segments)</span><br><span class="line">&#123;</span><br><span class="line">    tempParam += Vector3.Distance(ps.a, ps.b);</span><br><span class="line">    if (lastParam &lt;= tempParam)</span><br><span class="line">    &#123;</span><br><span class="line">        currentSegment = ps;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">if (currentSegment == null)</span><br><span class="line">    return 0f;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Given the current position, we need to work out the direction to go to:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vector3 currPos = position - currentSegment.a;</span><br><span class="line">Vector3 segmentDirection = currentSegment.b - currentSegment.a;</span><br><span class="line">segmentDirection.Normalize();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Find the point in the segment using vector projection:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vector3 pointInSegment = Vector3.Project(currPos, segmentDirection);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Finally, <em>GetParam</em> returns the next position to reach along the path:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">param = tempParam - Vector3.Distance(currentSegment.a, currentSegment.b);</span><br><span class="line">param += pointInSegment.magnitude;</span><br><span class="line">return param;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Define the GetPosition function:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public Vector3 GetPosition(float param)</span><br><span class="line">&#123;</span><br><span class="line">    // body</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Given the current location along the path, we find the corresponding<br>segment:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Vector3 position = Vector3.zero;</span><br><span class="line">PathSegment currentSegment = null;</span><br><span class="line">float tempParam = 0f;</span><br><span class="line">foreach (PathSegment ps in segments)</span><br><span class="line">&#123;</span><br><span class="line">    tempParam += Vector3.Distance(ps.a, ps.b);</span><br><span class="line">    if (param &lt;= tempParam)</span><br><span class="line">    &#123;</span><br><span class="line">        currentSegment = ps;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">if (currentSegment == null)</span><br><span class="line">    return Vector3.zero;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>GetPosition</em> converts the parameter as a spatial point and returns it:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vector3 segmentDirection = currentSegment.b - currentSegment.a;</span><br><span class="line">segmentDirection.Normalize();</span><br><span class="line">tempParam -= Vector3.Distance(currentSegment.a, currentSegment.b);</span><br><span class="line">tempParam = param - tempParam;</span><br><span class="line">position = currentSegment.a + segmentDirection * tempParam;</span><br><span class="line">return position;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Create the <em>PathFollower</em> behavior, which derives from <em>Seek</em> (remember to set<br>the order of execution):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">public class PathFollower : Seek</span><br><span class="line">&#123;</span><br><span class="line">    public Path path;</span><br><span class="line">    public float pathOffset = 0.0f;</span><br><span class="line">    float currentParam;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Implement the <em>Awake</em> function to set the target:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public override void Awake()</span><br><span class="line">&#123;</span><br><span class="line">    base.Awake();</span><br><span class="line">    target = new GameObject();</span><br><span class="line">    currentParam = 0f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The final step is to define the <em>GetSteering</em> function that relies on the abstraction created by the Path class to set the target position and apply <em>Seek</em> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public override Steering GetSteering()</span><br><span class="line">&#123;</span><br><span class="line">    currentParam = path.GetParam(transform.position, currentParam);</span><br><span class="line">    float targetParam = currentParam + pathOffset;</span><br><span class="line">    target.transform.position = path.GetPosition(targetParam);</span><br><span class="line">    return base.GetSteering();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="How-it-works…"><a href="#How-it-works…" class="headerlink" title="How it works…"></a>How it works…</h1><p>We use the <em>Path</em> class in order to have a movement guideline. It is the cornerstone, because it relies on <em>GetParam</em> to map an offset point to follow in its internal guideline, and it also uses <em>GetPosition</em> to convert that referential point to a position in the three-dimensional space along the segments.</p>
+<p>The path-following algorithm just makes use of the path’s functions in order to get a new position, update the target, and apply the <em>Seek</em> behavior.</p>
+<h1 id="There’s-more…"><a href="#There’s-more…" class="headerlink" title="There’s more…"></a>There’s more…</h1><p>It’s important to take into account the order in which the nodes are linked in the inspector for the path to work as expected. A practical way to achieve this is to manually name the nodes with a reference number:</p>
+<p><img src="images/reading-notes-20190308-1.png" alt="1"></p>
+<p>Also, we could define the OnDrawGizmos function in order to have a better visual reference of the path:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void OnDrawGizmos ()</span><br><span class="line">&#123;</span><br><span class="line">    Vector3 direction;</span><br><span class="line">    Color tmp = Gizmos.color;</span><br><span class="line">    Gizmos.color = Color.magenta;//example color</span><br><span class="line">    int i;</span><br><span class="line">    for (i = 0; i &lt; nodes.Count - 1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 src = nodes[i].transform.position;</span><br><span class="line">        Vector3 dst = nodes[i+1].transform.position;</span><br><span class="line">        direction = dst - src;</span><br><span class="line">        Gizmos.DrawRay(src, direction);</span><br><span class="line">    &#125;</span><br><span class="line">    Gizmos.color = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2019/02/27/reading-notes-20190227/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1384,7 +1577,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
