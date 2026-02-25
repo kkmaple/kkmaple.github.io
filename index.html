@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -196,6 +196,653 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2026/02/11/%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%B8%A9%E5%9D%91%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkmaple">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/02/11/%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%B8%A9%E5%9D%91%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">多语言踩坑汇总</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-02-11 15:13:23" itemprop="dateCreated datePublished" datetime="2026-02-11T15:13:23+08:00">2026-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-02-25 21:48:25" itemprop="dateModified" datetime="2026-02-25T21:48:25+08:00">2026-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://ko-fi.com/kkmaple"><img src="/images/githubbutton_sm.svg" alt="ko-fi"></a></p>
+<h2 id="土耳其语大小写转换"><a href="#土耳其语大小写转换" class="headerlink" title="土耳其语大小写转换"></a>土耳其语大小写转换</h2><blockquote>
+<p>土耳其语的大小写转换规则与英语（及大多数拉丁字母语言）存在显著差异，这在计算机科学界被称为“土耳其语 I 问题”，其实还有阿塞拜疆语也有这个问题。</p>
+</blockquote>
+<h3 id="1-核心差异：有点与无点的“I”"><a href="#1-核心差异：有点与无点的“I”" class="headerlink" title="1. 核心差异：有点与无点的“I”"></a>1. 核心差异：有点与无点的“I”</h3><p>在英语中，字母 <strong>i</strong> 的大写是 <strong>I</strong>。但在土耳其语中，这两个字母分别属于两组不同的对应关系 ：</p>
+<ul>
+<li><p><strong>有点字母组</strong>：小写 <strong>i</strong> 对应大写 <strong>İ</strong>（带点的 I）。</p>
+</li>
+<li><p><strong>无点字母组</strong>：小写 <strong>ı</strong>（无点 i）对应大写 <strong>I</strong>（无点 I）。</p>
+</li>
+</ul>
+<p>这意味着：</p>
+<ul>
+<li><p>在英语环境下：<code>i</code> ↔ <code>I</code></p>
+</li>
+<li><p>在土耳其语环境下：<code>i</code> ↔ <code>İ</code> 以及 <code>ı</code> ↔ <code>I</code></p>
+</li>
+</ul>
+<h3 id="2-技术与软件开发中的问题"><a href="#2-技术与软件开发中的问题" class="headerlink" title="2. 技术与软件开发中的问题"></a>2. 技术与软件开发中的问题</h3><p>由于许多编程语言（如 C#、Java等）的字符串转换函数（如 <code>toLowerCase()</code> 或 <code>toUpperCase()</code>）在默认情况下会参考系统的本地化设置（Locale），这导致了大量的软件缺陷 ：</p>
+<ul>
+<li><p><strong>关键字失效</strong>：如果一个编译器或解析器在土耳其语环境下运行，将大写的英文单词 “INFO” 转换为小写，结果会变成 “ınfo”（使用无点 ı），而不是预期的 “info”。这会导致程序无法识别指令或配置 。</p>
+</li>
+<li><p><strong>标签损坏</strong>：在游戏引擎（如 Unreal Engine）中，如果对包含富文本标签的代码进行文化敏感的大小写转换，<code>&lt;img id=&quot;...&quot;&gt;</code> 可能会变成 <code>&lt;İMG İD=&quot;...&quot;&gt;</code>，导致系统无法识别标签。</p>
+</li>
+<li><p><strong>文件系统错误</strong>：如果文件名包含 “I”，在土耳其语环境下转换为小写后，可能因为字符不匹配而导致无法找到文件</p>
+</li>
+</ul>
+<h3 id="3-历史与设计原因"><a href="#3-历史与设计原因" class="headerlink" title="3. 历史与设计原因"></a>3. 历史与设计原因</h3><ul>
+<li><p><strong>Unicode 设计</strong>：Unicode 为了保持与早期字符集（如 ISO-8859-9）的兼容性，将土耳其语的无点大写 <strong>I</strong> 与英语的大写 <strong>I</strong> 统一使用了同一个码点（U+0049），这使得大小写转换必须依赖于语言上下文（Locale）才能正确执行 。</p>
+</li>
+<li><p><strong>语言改革</strong>：土耳其语在 20 世纪 20 年代拉丁化改革时，为了实现“一个字母对应一个声音”的原则，特意区分了这两种元音 。</p>
+</li>
+</ul>
+<h3 id="4-解决方案"><a href="#4-解决方案" class="headerlink" title="4. 解决方案"></a>4. 解决方案</h3><p>为了避免这类 Bug，当需要将字符串转换为统一的大小写以便后续处理（如比较或存储）时，不应直接使用 <code>ToUpper()</code> 或 <code>ToLower()</code>，因为它们默认使用系统的当前文化设置（CurrentCulture）。</p>
+<ul>
+<li><strong>推荐方案</strong>：使用 <code>String.</code><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.string.toupperinvariant?view=netstandard-2.1"><code>ToUpperInvariant</code></a><code>()</code> 或 <code>String.</code><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.1"><code>ToLowerInvariant</code></a><code>()</code></li>
+</ul>
+<h2 id="浮点数转换字符串小数点-变成"><a href="#浮点数转换字符串小数点-变成" class="headerlink" title="浮点数转换字符串小数点.变成,"></a>浮点数转换字符串小数点<code>.</code>变成<code>,</code></h2><p>在许多欧洲国家或地区的语言设置中，默认的数字小数点分隔符是逗号（<code>,</code>）而不是点（<code>.</code>）。在执行 <code>ToString()</code> 操作时，.NET 会根据当前线程的文化环境自动选择分隔符。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="使用固定文化（CultureInfo-InvariantCulture）"><a href="#使用固定文化（CultureInfo-InvariantCulture）" class="headerlink" title="使用固定文化（CultureInfo.InvariantCulture）"></a>使用固定文化（CultureInfo.InvariantCulture）</h4><p><code>InvariantCulture</code> 的默认小数点分隔符始终是 <code>.</code>，且不会随系统语言环境的变化而改变&#x20;</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">double</span> <span class="keyword">value</span> = <span class="number">1.5</span>;</span><br><span class="line"><span class="built_in">string</span> result = <span class="keyword">value</span>.ToString(System.Globalization.CultureInfo.InvariantCulture);</span><br><span class="line"><span class="comment">// 结果始终为 &quot;1.5&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Application-systemLanguage返回语言标识错误"><a href="#Application-systemLanguage返回语言标识错误" class="headerlink" title="Application.systemLanguage返回语言标识错误"></a>Application.systemLanguage返回语言标识错误</h2><blockquote>
+<p>一些语言在调用Application.systemLanguage查询时会被错误的认为成马来语</p>
+</blockquote>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p><img src="/images/%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%B8%A9%E5%9D%91%E6%B1%87%E6%80%BB-image.png"></p>
+<ul>
+<li><p><strong>iOS - Preferred Language</strong>: 使用 <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/nslocale/preferredlanguages">iOS Preferred Language</a></p>
+<ul>
+<li>根据 iOS 本地化指南，用户的 <code>preferredLanguages</code> 是在 iOS 设置（设置 ➞ 通用 ➞ 语言与地区）中列出的语言顺序，项目中只取第一个即可。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">System.Runtime.InteropServices.DllImport(<span class="string">&quot;__Internal&quot;</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">getPreferredLanguage</span>()</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extern &quot;C&quot;</span><br><span class="line">&#123;</span><br><span class="line">    const char* getPreferredLanguage()</span><br><span class="line">    &#123;</span><br><span class="line">        NSString* language = [[NSLocale preferredLanguages]firstObject];</span><br><span class="line">        if (language == NULL)</span><br><span class="line">            return NULL;</span><br><span class="line">        </span><br><span class="line">        const char* languageCode = [language UTF8String];</span><br><span class="line">        const size_t len = strlen(languageCode) + 1;</span><br><span class="line">        char* pl = (char*)malloc(len);                </span><br><span class="line">        strlcpy(pl, languageCode, len);</span><br><span class="line">        return pl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Android - Device Language</strong>: 使用 <a target="_blank" rel="noopener" href="https://developer.android.com/reference/java/util/Locale#getDefault(java.util.Locale.Category)">Android getDefault</a></li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">string</span> <span class="title">GetAndroidDeviceLanguage</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">using</span> (AndroidJavaClass cls = <span class="keyword">new</span> AndroidJavaClass(<span class="string">&quot;java.util.Locale&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (cls != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">using</span> (AndroidJavaObject locale = cls.CallStatic&lt;AndroidJavaObject&gt;(<span class="string">&quot;getDefault&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (locale != <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> locale.Call&lt;<span class="built_in">string</span>&gt;(<span class="string">&quot;toLanguageTag&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>System Culture</strong>: 使用 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.globalization.cultureinfo.currentuiculture?view=netstandard-2.1"><span style="color: rgb(36,91,219); background-color: inherit">CultureInfo.CurrentUICulture</span></a></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CultureInfo.CurrentUICulture.TwoLetterISOLanguageName</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>System Language</strong>: 使用 <a target="_blank" rel="noopener" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/SystemLanguage.html"><span style="color: rgb(36,91,219); background-color: inherit">SystemLanguage</span></a> 做为最终检查</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application.systemLanguage</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="阿拉伯语处理"><a href="#阿拉伯语处理" class="headerlink" title="阿拉伯语处理"></a>阿拉伯语处理</h2><p><a target="_blank" rel="noopener" href="https://assetstore.unity.com/packages/tools/gui/arabic-support-for-unity-2674">Arabic Support for Unity</a></p>
+<h3 id="Tashkeel-发音-变音符号"><a href="#Tashkeel-发音-变音符号" class="headerlink" title="Tashkeel (发音&#x2F;变音符号)"></a>Tashkeel (发音&#x2F;变音符号)</h3><p><strong>Tashkeel</strong>（阿拉伯语：تشكيل）是指阿拉伯语中的<strong>变音符号</strong>或<strong>发音符号</strong>。由于阿拉伯字母主要是辅音，Tashkeel 符号被添加在字母的上方或下方，用以指示短元音、音节重复或静音。</p>
+<ul>
+<li><p><strong>常见类型</strong>：包括 Fathah (开口符)、Kasrah (齐齿符)、Dammah (合口符)、Sukun (静符)、Shadda (叠音符) 等。</p>
+</li>
+<li><p><strong>作用</strong>：这些符号对于准确的读音和理解句意至关重要。在普通的现代阿拉伯语出版物中，Tashkeel 有时会被省略，但在宗教文献（如古兰经）、诗歌和初级语言教材中是必须显示的。</p>
+</li>
+<li><p><strong>Unity 开发中的挑战</strong>：并非所有字体都能完美支持这些符号的渲染。在使用 <code>Arabic Support for Unity</code> 插件时，开发者可以选择显示或隐藏这些符号。</p>
+</li>
+</ul>
+<h3 id="x20-Hindu-numbers-印地数字-东阿拉伯数字"><a href="#x20-Hindu-numbers-印地数字-东阿拉伯数字" class="headerlink" title="&#x20;Hindu numbers (印地数字 &#x2F; 东阿拉伯数字)"></a>&#x20;Hindu numbers (印地数字 &#x2F; 东阿拉伯数字)</h3><p>在 Unity 插件（如 <code>ArabicSupport</code>）的语境下，<strong>Hindu numbers</strong> 指的是<strong>东阿拉伯数字</strong>（Eastern Arabic numerals），即在阿拉伯语、波斯语和乌尔都语地区广泛使用的数字形状 。</p>
+<ul>
+<li><p><strong>数字形态</strong>：它们看起来像这样：<strong>٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩</strong> 。</p>
+</li>
+<li><p><strong>命名困惑</strong>：</p>
+<ul>
+<li><p>我们平时用的 <strong>0, 1, 2…</strong> 在国际上被称为“西阿拉伯数字”（Western Arabic numerals）。</p>
+</li>
+<li><p>插件中提到的 <strong>Hindu numbers</strong> 其实是指在阿拉伯语国家常见的“东阿拉伯数字”。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Unity 开发中的功能</strong>：</p>
+<ul>
+<li><strong>自动转换</strong>：<code>Arabic Support for Unity</code> 插件提供选项，可以将标准英文字符（0-9）自动转换为这种特定的数字形状。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> ArabicSupport;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FixArabic3DText</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> showTashkeel = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> useHinduNumbers = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span> ()</span> </span><br><span class="line">    &#123;</span><br><span class="line">        TextMesh textMesh = gameObject.GetComponent&lt;TextMesh&gt;();</span><br><span class="line">        <span class="built_in">string</span> fixedText = ArabicFixer.Fix(textMesh.text, showTashkeel, useHinduNumbers);</span><br><span class="line">        gameObject.GetComponent&lt;TextMesh&gt;().text = fixedText;</span><br><span class="line">        Debug.Log(fixedText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CJK-字体缺失"><a href="#CJK-字体缺失" class="headerlink" title="CJK 字体缺失"></a>CJK 字体缺失</h2><blockquote>
+<p>中文等东亚字符显示为方块（□）的主要原因是字体文件不包含 CJK（中日韩）字符集，或者 TextMeshPro (TMP) 的字体资产（Font Asset）未包含对应字符的位图信息。</p>
+</blockquote>
+<ul>
+<li><p>选择支持 CJK 的字体</p>
+</li>
+<li><p>建议将 Atlas Resolution 设置为 <strong>2048x2048</strong> 或 <strong>4096x4096</strong>，因为中文等东亚字符数量巨大，需要更大的贴图空间</p>
+</li>
+<li><p>对于聊天系统等无法预知内容的文本，可以使用代码在运行时动态添加字符到字体资产中（如使用 <code>chineseFont.TryAddCharacters(c)</code>）并强制更新</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2025/09/29/%E4%BD%BF%E7%94%A8HTTP%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E6%97%B6%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkmaple">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/09/29/%E4%BD%BF%E7%94%A8HTTP%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E6%97%B6%E9%97%B4/" class="post-title-link" itemprop="url">使用HTTP获取网络时间</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-09-29 11:55:31" itemprop="dateCreated datePublished" datetime="2025-09-29T11:55:31+08:00">2025-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-02-25 22:01:40" itemprop="dateModified" datetime="2026-02-25T22:01:40+08:00">2026-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://ko-fi.com/kkmaple"><img src="/images/githubbutton_sm.svg" alt="ko-fi"></a><br><strong>📌 功能说明</strong></p>
+<p>有时候你可能想获取一个<strong>准确的网络时间（比如服务器时间）</strong>，但又不希望使用 <strong>NTP（UDP 123 端口）</strong> 协议，而是希望通过更常见的 <strong>HTTP 协议</strong> 来获取时间。</p>
+<p>⚠️ 注意：<strong>HTTP 本身不提供标准的时间接口</strong>，但很多网站会在 HTTP 响应头中返回一个 <strong>`Date` 字段</strong>，它代表 <strong>服务器的当前时间（UTC 时间）</strong>。我们可以利用这个特性，通过访问某个网站，解析 HTTP 响应头中的 <strong><code>Date</code></strong> 来间接获取网络时间。</p>
+<hr>
+<p><strong>✅ 推荐方法：通过 HTTP 请求获取响应头中的 Date 字段（服务器时间）</strong></p>
+<p>这是最简单、最常用的方式，<strong>不需要特殊协议，只需要发起一个 HTTP 请求（GET 或 HEAD），然后读取响应头里的 Date 字段即可</strong>。</p>
+<hr>
+<p><strong>🧩 实现原理</strong></p>
+<p>发送 HTTP 请求（比如访问 <a target="_blank" rel="noopener" href="https://www.google.com/"><strong><code>https://www.google.com</code></strong></a> 或 <strong><code>https://www.baidu.com</code></strong>）</p>
+<p>服务器在返回的 <strong>HTTP 响应头中会包含一个 `Date:` 字段</strong>，表示服务器发送该响应时的 UTC 时间</p>
+<p>我们解析这个 <strong><code>Date</code></strong> 字符串 → 转为 C# 的 <strong><code>DateTime</code></strong> 对象</p>
+<hr>
+<p><strong>🛠 示例代码：使用 Unity &#x2F; C# 通过 HTTP 获取网络时间（UTC）</strong></p>
+<p>适用于 <strong>C#（包括 Unity）环境，使用 `UnityWebRequest` 或 `HttpWebRequest`</strong></p>
+<hr>
+<p><strong>✅ 方法：使用 UnityWebRequest（推荐在 Unity 中使用）</strong></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.Networking;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HttpTimeFetcher</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 可以换成任意一个稳定的 HTTPS 网站，比如：</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">string</span> url = <span class="string">&quot;https://www.baidu.com&quot;</span>; <span class="comment">// 或者 https://www.google.com</span></span><br><span class="line"></span><br><span class="line">    <span class="function">IEnumerator <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        DateTime? networkUtcTime = <span class="keyword">await</span> GetNetworkTimeViaHttp(url);</span><br><span class="line">        <span class="keyword">if</span> (networkUtcTime.HasValue)</span><br><span class="line">        &#123;</span><br><span class="line">            Debug.Log(<span class="string">&quot;从 HTTP 获取到的服务器时间 (UTC): &quot;</span> + networkUtcTime.Value);</span><br><span class="line">            Debug.Log(<span class="string">&quot;对应的本地时间: &quot;</span> + networkUtcTime.Value.ToLocalTime());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            Debug.LogError(<span class="string">&quot;获取网络时间失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 使用 UnityWebRequest 获取 HTTP 响应头中的 Date 时间（UTC）</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;url&quot;&gt;</span>任意一个 HTTPS 网址<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>返回服务器时间的 DateTime?（UTC），失败返回 null<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> IEnumerator <span class="title">GetNetworkTimeViaHttp</span>(<span class="params"><span class="built_in">string</span> url</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">using</span> (UnityWebRequest request = UnityWebRequest.Head(url))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">yield</span> <span class="keyword">return</span> request.SendWebRequest();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (request.result == UnityWebRequest.Result.Success)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> dateHeader = request.GetResponseHeader(<span class="string">&quot;Date&quot;</span>);</span><br><span class="line">                <span class="keyword">if</span> (!<span class="built_in">string</span>.IsNullOrEmpty(dateHeader))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 解析 HTTP Date 头（格式是 RFC 1123，比如：Wed, 18 Oct 2023 12:00:00 GMT）</span></span><br><span class="line">                    <span class="keyword">if</span> (DateTime.TryParse(dateHeader, <span class="keyword">out</span> DateTime serverTime))</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.Log(<span class="string">&quot;解析成功，服务器时间: &quot;</span> + serverTime);</span><br><span class="line">                        <span class="comment">// 注意：Unity 的 DateTime.Parse 默认可能是本地时间，但 HTTP Date 是 UTC 格式！</span></span><br><span class="line">                        <span class="comment">// 所以此处 serverTime 其实已经是 UTC 时间（只要服务器返回正确）</span></span><br><span class="line">                        <span class="keyword">yield</span> <span class="keyword">return</span> serverTime.ToUniversalTime(); <span class="comment">// 一般不需要，因为本身就是 UTC</span></span><br><span class="line">                        DateTime utcTime = serverTime; <span class="comment">// 如果服务器返回的是 GMT / UTC 格式，则 serverTime 已是 UTC</span></span><br><span class="line">                        <span class="keyword">yield</span> <span class="keyword">return</span> utcTime;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.LogWarning(<span class="string">&quot;无法解析 Date 头: &quot;</span> + dateHeader);</span><br><span class="line">                        <span class="keyword">yield</span> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    Debug.LogWarning(<span class="string">&quot;HTTP 响应头中没有 Date 字段&quot;</span>);</span><br><span class="line">                    <span class="keyword">yield</span> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                Debug.LogError(<span class="string">&quot;HTTP 请求失败: &quot;</span> + request.error);</span><br><span class="line">                <span class="keyword">yield</span> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>⚠️ 注意：<strong><code>UnityWebRequest.Head(url)</code></strong> 只发送 HTTP HEAD 请求（不下载内容，更轻量），服务器仍然会返回响应头，包括 <strong><code>Date:</code></strong>。</p>
+<p><strong><span style="color: inherit; background-color: rgb(242,243,245)">🕒 关于 HTTP Date 格式</span></strong></p>
+<p><span style="color: inherit; background-color: rgb(242,243,245)">HTTP 响应头中的 </span><strong><code>Date:</code></strong><span style="color: inherit; background-color: rgb(242,243,245)"> 是按照 </span><strong><span style="color: inherit; background-color: rgb(242,243,245)">RFC 1123 规范</span></strong><span style="color: inherit; background-color: rgb(242,243,245)"> 格式化的字符串，例如：</span></p>
+<p><code>Date: Wed, 18 Oct 2023 13:42:00 GMT</code></p>
+<p><span style="color: inherit; background-color: rgb(242,243,245)">这个时间是 </span><strong><span style="color: inherit; background-color: rgb(242,243,245)">服务器发送响应时的 </span> <span style="color: inherit; background-color: rgb(242,243,245)">UTC</span> <span style="color: inherit; background-color: rgb(242,243,245)">（GMT）时间</span></strong><span style="color: inherit; background-color: rgb(242,243,245)">，你可以直接解析成 </span><strong><code>DateTime</code></strong><span style="color: inherit; background-color: rgb(242,243,245)">，通常它已经代表的是 </span><strong><span style="color: inherit; background-color: rgb(242,243,245)">标准 UTC 时间</span></strong><span style="color: inherit; background-color: rgb(242,243,245)">。</span></p>
+<hr>
+<p><strong><span style="color: inherit; background-color: rgb(242,243,245)">🔒 注意事项</span></strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✅ 推荐网站</td>
+<td>使用稳定的 HTTPS 网站，比如 <a target="_blank" rel="noopener" href="https://www.baidu.com、https//www.google.com%E3%80%81https://www.microsoft.com">https://www.baidu.com、https://www.google.com、https://www.microsoft.com</a></td>
+</tr>
+<tr>
+<td>⚠️ HTTP vs HTTPS</td>
+<td>优先使用 HTTPS，部分 HTTP 网站可能没有返回 Date 头或被拦截</td>
+</tr>
+<tr>
+<td>❌ 不可靠因素</td>
+<td>某些服务器可能不返回 Date 头，或者返回的格式不标准</td>
+</tr>
+<tr>
+<td>🌍 网络要求</td>
+<td>设备必须能访问互联网，某些防火墙&#x2F;代理可能会拦截请求</td>
+</tr>
+<tr>
+<td>🧠 精度</td>
+<td>HTTP Date 精度通常是秒级，比 NTP 略低，但一般足够用于大多数业务</td>
+</tr>
+<tr>
+<td>🕓 替代方案</td>
+<td>如你需要更高精度时间同步，建议使用 NTP（UDP 123 端口）</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong><span style="color: inherit; background-color: rgb(242,243,245)">✅ 总结</span></strong></p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+<th>推荐度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HTTP 响应头 Date 字段</td>
+<td>通过 HTTP 请求（如 HEAD）获取服务器响应头中的 Date: …，解析得到服务器 UTC 时间</td>
+<td>✅ 推荐（简单通用，无需特殊协议）</td>
+</tr>
+<tr>
+<td>NTP (UDP 123)</td>
+<td>标准时间同步协议，精度高，需 UDP 支持</td>
+<td>✅ 推荐（更专业、更精准）</td>
+</tr>
+<tr>
+<td>HTTP API（如 worldtimeapi）</td>
+<td>通过调用某些返回 JSON 时间的 HTTP API（如 <a target="_blank" rel="noopener" href="http://worldtimeapi.org)获取时间/">http://worldtimeapi.org）获取时间</a></td>
+<td>✅ 可用（但依赖第三方接口）</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2023/09/03/SpriteOutline/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkmaple">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/09/03/SpriteOutline/" class="post-title-link" itemprop="url">SpriteOutline</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-03 15:53:30" itemprop="dateCreated datePublished" datetime="2023-09-03T15:53:30+08:00">2023-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-02-25 22:07:23" itemprop="dateModified" datetime="2026-02-25T22:07:23+08:00">2026-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://ko-fi.com/kkmaple"><img src="/images/githubbutton_sm.svg" alt="ko-fi"></a><br>Outline是让物体在游戏中“<del><span style="color: inherit; background-color: rgba(255,246,122,0.8)">脱颖而出</span></del>”的一种非常流行的方法。</p>
+<p>本次分享，我们将使用<a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2022.3/Manual/class-SpriteRenderer.html"><strong><code>SpriteRenderer</code></strong></a>并使用<a target="_blank" rel="noopener" href="https://docs.unity.cn/Packages/com.unity.shadergraph@16.0/manual/index.html"><strong><code>Shader Graph</code></strong></a>为<a target="_blank" rel="noopener" href="https://docs.unity.cn/cn/2022.3/Manual/Sprites.html"><strong><code>Sprite</code></strong></a>添加外轮廓。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>以不同的UV坐标对纹理进行多次采样，并根据这些采样的alpha值确定应该绘制轮廓还是正常纹理。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>导入我们希望应用Outline Shader的Sprite，Sprite周围<strong>需要有透明的边框</strong>。导入后在Inspector窗口中设置Texture Type为Sprite（2D和UI），设置Mesh Type为Full Rect。</p>
+<p><img src="/images/Sprite%20Outline-image-14.png"></p>
+<p>使用Full Rect的原因是Unity默认会尝试缩小精Sprite Mesh的大小以优化项目。我们想要额外的空间，绘制轮廓的地方。</p>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h4 id="创建一个Sprite着色器"><a href="#创建一个Sprite着色器" class="headerlink" title="创建一个Sprite着色器"></a>创建一个Sprite着色器</h4><ol>
+<li>通过菜单<strong>Create</strong> | <strong>Shader</strong> | <strong>Universal Render Pipeline</strong> | <strong>Sprite Lit Shader Graph</strong>创建一个新的Shader Graph命名为  SpriteOutlineGraph。</li>
+</ol>
+<p><img src="/images/Sprite%20Outline-image-12.png"></p>
+<ul>
+<li><p>通过菜单<strong>Create</strong> | <strong>Material</strong> 创建一个新材质  SpriteOutlineMat，并将材质的Shader设置为 Shader Graphs&#x2F;SpriteOutlineGraph。</p>
+</li>
+<li><p>将我们之前导入的Sprite拖入场景，并将上一步创建的材质SpriteOutlineMat拖拽到Sprite对象上。<br>&#x20;Sprite会显示为灰色，别着急我们马上让它恢复原样。</p>
+</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-10.png"></p>
+<ul>
+<li>首先，我们把我们的纹理添加回Sprite。为此，我们将对主纹理进行采样。从Blackboard上，单击+按钮并选择Texture 2D，为其命名为Main Texture。打开Graph Inspector并将引用值更改为_MainTex。右键单击Main Preview并选择Quad，以便更轻松地查看着色器将如何工作。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-13.png"></p>
+<ul>
+<li>将属性Main Texture拖放到Graph上。右键单击主纹理节点右侧，选择创建节点，选择<strong>Input&#x20;</strong>| <strong>Texture</strong> | <strong>Sample  Texture 2D</strong>。将 Main Texture (T2) 输出连接到Sample Texture 2D节点的Texture (T2)输入。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-9.png"></th>
+<th><img src="/images/Sprite%20Outline-image-11.png"></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>此时，我们可以将RGBA连接到Base Color，将A连接到Fragment节点上的Alpha通道，我们将拥有一个与普通着色器完全相同的Sprite着色器。&#x20;</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-7.png"></p>
+<h4 id="创建Outline着色器"><a href="#创建Outline着色器" class="headerlink" title="创建Outline着色器"></a>创建Outline着色器</h4><ol>
+<li><p>我们需要一些额外的步骤来实现Outline，首先先断开之前Base Color和Alpha通道的链接。</p>
+</li>
+<li><p>我们希望原始纹理保持不变，为此我们将创建Main Texture和Sample Texture 2D节点的副本。我们可以通过鼠标拖动框选两个节点。选中后，按Ctrl+C，然后按Ctrl+V。将复制的节点移动到已创建的节点下方。</p>
+</li>
+</ol>
+<p><img src="/images/Sprite%20Outline-image-8.png"></p>
+<ul>
+<li>&#x20;在新创建的Sample Texture 2D节点上，单击并从 UV (2)输入拖动到左侧，然后创建一个Tiling and Offset节点，并将Offset的X值设置为0.1。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-6.png"></th>
+<th><img src="/images/Sprite%20Outline-image-3.png"></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>在两Sample Texture 2D节点的右侧，创建一个Subtract 节点，将设置了Offset的 Sample Texture 2D的A连接到减法节点的A输入，将原始Sample Texture 2D的A连接到B输入。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-4.png"></p>
+<ul>
+<li>为了把X和Y属性设置为我们想要使用的偏移量，在Tiling and Offset节点的偏移量输入的左侧，创建一个Vector 2节点，并将两个值为½ 的divide 节点作为Vector 2节点的输入。可以看到在X和Y方向上精灵移动了50%。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-5.png"></p>
+<ul>
+<li>在Divide节点的左侧添加一个Texel Size节点，并将Main Texture变量连接到Texel Size节点的Texture输入。将Texel Size节点的Width输出连入X offset Divide节点的B输入中，将Texel Size节点的Height连入Y Offset节点的B输入中。 这样就可以按照像素对X，Y方向做偏移了。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image.png"></p>
+<ul>
+<li>单击并拖动Subtract 节点的输出并创建一个Multiply 节点。在Multiply 节点的左侧，通过空格创建一种颜色，然后选择 <strong>Input</strong> | <strong>Basic&#x20;</strong>| <strong>Color</strong>。为了易于查看的使用了红色，确保Alpha设置为255。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-1.png"></p>
+<ul>
+<li>我们希望在四个方向中的每一个方向都重复这种效果。为了使这更容易，我们需要创建一个Sub-graph。一次选择到目前为止已经创建的所有节点，然后右键单击并选择<strong>Convert To</strong> | <strong>Sub-graph</strong>。命名为GetEdgeGraph。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-2.png"></th>
+<th><img src="/images/Sprite%20Outline-image-29.png"></th>
+</tr>
+</thead>
+</table>
+<h4 id="GetEdgeGraph-Sub-Graph"><a href="#GetEdgeGraph-Sub-Graph" class="headerlink" title="GetEdgeGraph Sub-Graph"></a>GetEdgeGraph Sub-Graph</h4><ol>
+<li>双击打开GetEdgeGraph节点。我们将看到一个名为Output的节点。选择它，然后在Graph Inspector中的Inputs部分下，单击+图标并将新参数重命名为Edge并设置Vector4的类型。将Multiply 节点输出连接到刚刚创建的Edge输入。&#x20;</li>
+</ol>
+<p><img src="/images/Sprite%20Outline-image-24.png"></p>
+<ul>
+<li>接下来我使用参数来调整方向和厚度。为此，在Blackboard并单击+按钮并创建一个名为Direction的Vector2属性和一个名为Thickness的Float属性。在Graph Inspector窗口中，为Direction设置默认值（1,0）并将Thickness的默认值设置为5。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-28.png"></th>
+<th><img src="/images/Sprite%20Outline-image-27.png"></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>将Direction拖到Divide 节点的左侧。在它的右侧，创建一个Multiply 节点，然后将Direction和Thickness作为输入连接。拖拽Multiply 节点的输出，创建一个Split 节点。将R连接到X除法的A，将G连接到Y除法的A。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-26.png"></p>
+<ul>
+<li>最后，右键单击Color 节点并选择<strong>Convert To</strong> | <strong>Property</strong>。重命名属性为Outline Color。&#x20;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-21.png"></th>
+<th><img src="/images/Sprite%20Outline-image-20.png"></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>单击Save Asset按钮，然后返回SpriteOutlineGraph。&#x20;</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-23.png"></p>
+<h4 id="完成Outline着色器"><a href="#完成Outline着色器" class="headerlink" title="完成Outline着色器"></a>完成Outline着色器</h4><ol>
+<li><p>现在GetEdgeGraph可以像其他节点一样工作，我们可以通过复制和粘贴轻松多次调用它。</p>
+</li>
+<li><p>在Blackboard窗口，点击+按钮，创建一个名为Outline Thickness的Float属性和一个名为Outline Color的Color属性。将Outline Thickness的默认值设置为5，将Outline Color设置为完全不透明的红色。&#x20;</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-19.png"></th>
+<th><img src="/images/Sprite%20Outline-image-22.png"></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>将这两个属性拖到Graph中，然后将它们连入GetEdgeGraph的输入。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-18.png"></p>
+<ul>
+<li>我们现在将节点选中复制三次，并分别将Direction 设置为（-1,0）、（0，-1）和（0,1）。然后，创建一个Add节点将前两条边连接在一起，然后为第三条和第四条边创建一个Add节点。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-25.png"></th>
+<th><img src="/images/Sprite%20Outline-image-15.png"></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>然后添加一个Add节点，将两个Add节点连接在一起。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-16.png"></p>
+<ul>
+<li>在组合的Add节点的末尾，创建一个Saturate 节点，并将Add节点的Out连接到Saturate 节点的In。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><img src="/images/Sprite%20Outline-image-17.png"></th>
+<th><img src="/images/Sprite%20Outline-image-33.png"></th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>现在我们有了四个边，但是我们需要将效果添加到原始Sprite中。为此，为此我们还需创建另一个具有Main Texture的Sample Texture 2D节点。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-30.png"></p>
+<ul>
+<li>从Saturate 节点的输出拖拽创建一个Add:(B) 节点，并将Main Texture的Sapmle RGBA连入A。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-31.png"></p>
+<ul>
+<li>我们现在可以将Out结果连接到Fragment节点的Base Color属性，但alpha无法连接。为此，在Add节点的Out右侧，创建一个Split节点。将Split节点的A连接到Fragment节点上的Alpha。</li>
+</ul>
+<p><img src="/images/Sprite%20Outline-image-32.png"></p>
+<ul>
+<li>点击Save Asset按钮，点击Play就可以看到最终效果。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -316,13 +963,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">5k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
