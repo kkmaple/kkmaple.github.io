@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -196,6 +196,324 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2026/03/14/%E5%9C%A8-Synology-NAS%E4%B8%8A%E4%BF%AE%E5%A4%8D-Gitea-SSH-%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkmaple">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/03/14/%E5%9C%A8-Synology-NAS%E4%B8%8A%E4%BF%AE%E5%A4%8D-Gitea-SSH-%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">在 Synology NAS上修复 Gitea SSH 功能无法正常工作的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-03-14 14:57:38 / 修改时间：15:33:33" itemprop="dateCreated datePublished" datetime="2026-03-14T14:57:38+08:00">2026-03-14</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>142</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://ko-fi.com/kkmaple"><img src="/images/githubbutton_sm.svg" alt="ko-fi"></a></p>
+<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><ol>
+<li>通过 SynoCommunity 的套件安装了 Gitea</li>
+<li>标准安装和 Web 界面配置（生成并添加 SSH 密钥）完成后，尝试通过 SSH 连接时遇到问题</li>
+</ol>
+<h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><blockquote>
+<p>使用命令 ssh -Tv sc-gitea@nas 测试连接时，虽然 SSH 客户端能成功建立连接，并且服务器也接受了公钥认证，但最终会话被拒绝，提示 Permission denied, please try again</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>启用 Gitea 内置 SSH 服务器</p>
+<ul>
+<li>编辑配置文件：&#x2F;var&#x2F;packages&#x2F;gitea&#x2F;var&#x2F;conf.ini</li>
+<li>将 SSH_PORT &#x3D; 22 后添加 START_SSH_SERVER &#x3D; true<br><img src="/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_14-3-2026_152513_192.168.50.41.jpeg"></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2026/03/10/%E8%BF%81%E7%A7%BB%E5%88%B0-Windows-%E6%9C%AC%E5%9C%B0%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkmaple">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/03/10/%E8%BF%81%E7%A7%BB%E5%88%B0-Windows-%E6%9C%AC%E5%9C%B0%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" class="post-title-link" itemprop="url">迁移到 Windows 本地执行定时任务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-03-10 16:33:56" itemprop="dateCreated datePublished" datetime="2026-03-10T16:33:56+08:00">2026-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-03-14 15:38:43" itemprop="dateModified" datetime="2026-03-14T15:38:43+08:00">2026-03-14</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>145</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://ko-fi.com/kkmaple"><img src="/images/githubbutton_sm.svg" alt="ko-fi"></a></p>
+<h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /d C:\tasks\myrepo</span><br><span class="line">python -m venv .venv</span><br></pre></td></tr></table></figure>
+
+<h2 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h2><p>CMD:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.venv\Scripts\activate.bat</span><br></pre></td></tr></table></figure>
+
+<p>PowerShell:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.venv\Scripts\Activate.ps1</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="看-python-指向哪里"><a href="#看-python-指向哪里" class="headerlink" title="看 python 指向哪里"></a>看 <code>python</code> 指向哪里</h2><p>CMD:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where python</span><br></pre></td></tr></table></figure>
+
+<p>PowerShell:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-Command python</span><br></pre></td></tr></table></figure>
+
+<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>signal.signal(signal.SIGALRM, timeout_handler)<br>^^^^^^^^^^^^^^<br>AttributeError: module ‘signal’ has no attribute ‘SIGALRM’. Did you mean: ‘SIGABRT’?</p>
+<p>方案 ：判断平台，仅在非 Windows 使用 <code>SIGALRM</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import signal</span><br><span class="line">import platform</span><br><span class="line"></span><br><span class="line">def timeout_handler(signum, frame):</span><br><span class="line">    raise TimeoutError(&quot;操作超时&quot;)</span><br><span class="line"></span><br><span class="line">if platform.system() != &quot;Windows&quot;:</span><br><span class="line">    signal.signal(signal.SIGALRM, timeout_handler)</span><br><span class="line">    signal.alarm(10)</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新单个pip包"><a href="#更新单个pip包" class="headerlink" title="更新单个pip包"></a>更新单个pip包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade 包名</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看哪些包可以更新"><a href="#查看哪些包可以更新" class="headerlink" title="查看哪些包可以更新"></a>查看哪些包可以更新</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdated</span><br></pre></td></tr></table></figure>
+
+<h2 id="想把-requirements-txt-里的包都更新到最新版本"><a href="#想把-requirements-txt-里的包都更新到最新版本" class="headerlink" title="想把 requirements.txt 里的包都更新到最新版本"></a>想把 <code>requirements.txt</code> 里的包都更新到最新版本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt --upgrade</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmaple.com/2026/03/09/%E5%AF%BC%E5%87%BA-PSB-%E6%96%87%E4%BB%B6%E4%B8%AD%E9%80%9A%E8%BF%87-PSD-Importer-%E7%94%9F%E6%88%90%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90-Sprite-%E4%B8%BA%E7%8B%AC%E7%AB%8B%E7%9A%84-PNG-%E5%9B%BE%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkmaple">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 勇气小铺">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/03/09/%E5%AF%BC%E5%87%BA-PSB-%E6%96%87%E4%BB%B6%E4%B8%AD%E9%80%9A%E8%BF%87-PSD-Importer-%E7%94%9F%E6%88%90%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90-Sprite-%E4%B8%BA%E7%8B%AC%E7%AB%8B%E7%9A%84-PNG-%E5%9B%BE%E7%89%87/" class="post-title-link" itemprop="url">导出 PSB 文件中通过 PSD Importer 生成的所有子 Sprite 为独立的 PNG 图片</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-03-09 11:35:47" itemprop="dateCreated datePublished" datetime="2026-03-09T11:35:47+08:00">2026-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-03-14 15:37:45" itemprop="dateModified" datetime="2026-03-14T15:37:45+08:00">2026-03-14</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>510</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://ko-fi.com/kkmaple"><img src="/images/githubbutton_sm.svg" alt="ko-fi"></a></p>
+<p>这是一个 <strong>Unity 编辑器脚本</strong>，用于导出 PSD&#x2F;PSB 文件中通过 PSD Importer 生成的所有子 Sprite 为独立的 PNG 图片。</p>
+<h3 id="菜单入口"><a href="#菜单入口" class="headerlink" title="菜单入口"></a><strong>菜单入口</strong></h3><p><code>Tools/PSD/导出选中PSB的所有子Sprite</code></p>
+<h3 id="功能流程"><a href="#功能流程" class="headerlink" title="功能流程"></a><strong>功能流程</strong></h3><ol>
+<li>获取当前选中的 <code>.psb</code> 文件</li>
+<li>加载该 PSD 文件包含的所有 Asset（通过 <code>AssetDatabase.LoadAllAssetsAtPath</code>）</li>
+<li>筛选出所有 <code>Sprite</code> 类型的资源</li>
+<li>在 PSD 同目录下创建 <code>&lt;文件名&gt;_SubSprites</code> 文件夹</li>
+<li>将每个 Sprite 裁剪为独立 PNG 导出</li>
+</ol>
+<h3 id="原始使用场景"><a href="#原始使用场景" class="headerlink" title="原始使用场景"></a><strong>原始使用场景</strong></h3><p>Unity 的 PSD Importer 可以将 PSD 文件作为多图层 Sprite 图集导入，每个图层自动生成为一个子 Sprite。但 Unity 没有提供反向导出功能，这个脚本就是用来<strong>解决这个痛点</strong>——将已导入的 Sprite 重新导出为独立的 PNG 图片。</p>
+<h3 id="典型用途"><a href="#典型用途" class="headerlink" title="典型用途"></a><strong>典型用途</strong></h3><ul>
+<li>导出 PSD 分层后的 Sprite 供其他工具&#x2F;项目使用</li>
+<li>备份或检查 PSD Importer 实际生成的 Sprite 内容</li>
+<li>将图集拆分为单独的资源文件</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> UnityEditor;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> Object = UnityEngine.Object;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ExportPsbSubSprites</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">MenuItem(<span class="string">&quot;Tools/PSD/导出选中PSB的所有子Sprite&quot;</span>)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ExportSelectedPsbSprites</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Object selected = Selection.activeObject;</span><br><span class="line">        <span class="keyword">if</span> (selected == <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Debug.LogError(<span class="string">&quot;请先选中 .psb 文件&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> path = AssetDatabase.GetAssetPath(selected);</span><br><span class="line">        <span class="keyword">var</span> assets = AssetDatabase.LoadAllAssetsAtPath(path);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> outputDir = Path.Combine(Path.GetDirectoryName(path), Path.GetFileNameWithoutExtension(path) + <span class="string">&quot;_SubSprites&quot;</span>);</span><br><span class="line">        Directory.CreateDirectory(outputDir);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> a <span class="keyword">in</span> assets)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a <span class="keyword">is</span> Sprite sprite)</span><br><span class="line">            &#123;</span><br><span class="line">                ExportSprite(sprite, SafeCombine(outputDir, sprite.name + <span class="string">&quot;.png&quot;</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        AssetDatabase.Refresh();</span><br><span class="line">        Debug.Log(<span class="string">&quot;导出完成: &quot;</span> + outputDir);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">SafeCombine</span>(<span class="params"><span class="built_in">string</span> directory, <span class="built_in">string</span> fileName</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">string</span>.IsNullOrWhiteSpace(directory))</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">&quot;directory 不能为空&quot;</span>, <span class="keyword">nameof</span>(directory));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">string</span>.IsNullOrWhiteSpace(fileName))</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">&quot;fileName 不能为空&quot;</span>, <span class="keyword">nameof</span>(fileName));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 清理文件名中的非法字符</span></span><br><span class="line">        <span class="keyword">var</span> invalidChars = Path.GetInvalidFileNameChars();</span><br><span class="line">        <span class="keyword">var</span> safeFileName = <span class="keyword">new</span> <span class="built_in">string</span>(fileName</span><br><span class="line">            .Where(c =&gt; !invalidChars.Contains(c))</span><br><span class="line">            .ToArray());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 防止清理后为空</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">string</span>.IsNullOrWhiteSpace(safeFileName))</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">&quot;fileName 清理后为空，原始文件名可能全是非法字符&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Path.Combine(directory, safeFileName);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ExportSprite</span>(<span class="params">Sprite sprite, <span class="built_in">string</span> outputPath</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Texture2D tex = sprite.texture;</span><br><span class="line">        Rect rect = sprite.rect;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> texPath = AssetDatabase.GetAssetPath(tex);</span><br><span class="line">        <span class="keyword">var</span> importer = AssetImporter.GetAtPath(texPath) <span class="keyword">as</span> TextureImporter;</span><br><span class="line">        <span class="built_in">bool</span> reset = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (importer != <span class="literal">null</span> &amp;&amp; !importer.isReadable)</span><br><span class="line">        &#123;</span><br><span class="line">            importer.isReadable = <span class="literal">true</span>;</span><br><span class="line">            importer.SaveAndReimport();</span><br><span class="line">            reset = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Texture2D outTex = <span class="keyword">new</span> Texture2D((<span class="built_in">int</span>)rect.width, (<span class="built_in">int</span>)rect.height, TextureFormat.RGBA32, <span class="literal">false</span>);</span><br><span class="line">        outTex.SetPixels(tex.GetPixels((<span class="built_in">int</span>)rect.x, (<span class="built_in">int</span>)rect.y, (<span class="built_in">int</span>)rect.width, (<span class="built_in">int</span>)rect.height));</span><br><span class="line">        outTex.Apply();</span><br><span class="line"></span><br><span class="line">        File.WriteAllBytes(outputPath, outTex.EncodeToPNG());</span><br><span class="line">        Object.DestroyImmediate(outTex);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (reset &amp;&amp; importer != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            importer.isReadable = <span class="literal">false</span>;</span><br><span class="line">            importer.SaveAndReimport();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1200,13 +1518,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">7k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
